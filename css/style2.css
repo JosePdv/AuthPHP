@@ -1,0 +1,98 @@
+/* bloco deresponsividade*/
+
+.overlay{
+  display: none;
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  background: #fff;
+  z-index: 10;
+  opacity: 0.7;
+}
+.loader{
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  border:10px solid #333;
+  position: relative;
+  margin: 0 auto;
+  top:30%;
+  animation:loader 2s linear infinite;
+}
+@keyframes loader{
+  50% {
+    opacity: 0.5;
+  }
+  100% {
+    transform:rotate(360deg);
+  }
+}
+.loader:after{
+  content: "";
+    width: 35px;
+    height: 35px;
+    background: #333;
+    position: absolute;
+    border-radius: 50%;
+    top: -20px;
+    left: 55px;
+}
+.loader:before{
+  content: "";
+    width: 0;
+    height: 0;
+    border-left: 15px solid transparent;
+    border-right: 15px solid transparent;
+    border-bottom: 15px solid #333;
+    position: absolute;
+    transform: rotate(-90deg);
+    top: -10px;
+    left: 39px;
+
+}
+/* fim bloco deresponsividade*/
+p{letter-spacing: .1em;}
+h2{letter-spacing: .1em;}
+body{background-color: rgb(205,205,205);}
+
+select{
+ background-color:rgb(230,230,230);
+  width:130px;
+}
+
+input[type=text] {
+  background-color:rgb(230,230,230);
+ 
+  width: 400px;
+}
+input[type=password] {
+  background-color:rgb(230,230,230);
+
+  width: 400px;
+}
+input[type=password]:focus {
+  background-color: rgb(155,190,255);
+}
+input[type=text]:focus {
+  background-color: rgb(155,190,255);
+}
+
+
+	
+.posicao form{
+
+ margin-left:250px;
+ 
+}
+.posicao h2{
+	text-align: center;
+}
+.posicaoImagen{
+  padding-top: 10%;
+  text-align: center;
+}
+
+.teste{
+	background-color: rgb(205,205,205);
+	height: 100%;
+}

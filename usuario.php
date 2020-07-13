@@ -15,6 +15,8 @@ $comando ->bindValue("senha",$senha);
  	$dado =$comando->fetch();
  	
  	$_SESSION['idUser']=$dado['id'];
+	$_SESSION['tip']=$dado['tipo'];
+
  	return true;
 
  	

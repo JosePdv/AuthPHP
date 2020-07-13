@@ -1,6 +1,4 @@
-<?php 
-
-
+	<?php 
 	require 'Conexao.php';
 	require 'usuario.php';
 	$u = new Usuario();
@@ -15,46 +13,24 @@
 
 
 }
-$conexao = new PDO('mysql:host=localhost;dbname=atividade',
-					'root',
-					'');
 
 
-
- $comando = $conexao->prepare("SELECT * FROM cadastro");
- $comando->execute();
-
- 		//while ($linha = $comando->fetch(PDO::FETCH_ASSOC)){
- 						//echo$nome=$linha["nome"];
- 						//echo$linha["sobrenome"];
- 						//echo$linha["cpf"];
- 						//echo$linha["cargo"];
- 						//echo$linha["data"];
-
-									//$nome=$linha['nome'];
-									//$sobrenome=$linha['sobrenome'];
-									//$cpf=$linha['cpf'];
-									//$data=$linha['data'];
-									//$cargo=$linha['cargo'];
-									//$id=$linha['id'];
-				
-									//	}
-	
 ?>
-<html>
+<html> 
+
 <head>
 <title> Prefeitura Rio Branco</title>
-<meta charset="UTF-8">
-<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
-<link rel="icon" href="icon/icon4.png" type="image/icon type">
-<link rel="stylesheet"  href="css/grid.css">
-<link rel="stylesheet"  href="css/lista.css">
-</head>  
+	<meta charset="UTF-8">
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+	<link rel="icon" href="icon/icon4.png" type="image/icon type">
+	<link rel="stylesheet"  href="css/grid.css">
+	<link rel="stylesheet"  href="css/formulario2.css">
+</head>
 
-<body >
-
-	<header class="cabecalho"> 
-		<div class="container">
+<body>
+	
+<header class="cabecalho"> 
+	<div class="container">
 	<a  href="formulario.php"> <img src="icon/id.png"></a>
 	<a  href="logout.php"><button  class="btn btn-outline-dark ">sair</button></a>
 	<nav class="grid-16 menu">
@@ -67,59 +43,53 @@ $conexao = new PDO('mysql:host=localhost;dbname=atividade',
         </ul>
 
       </nav>
+
+	
 	</div>
- 	</header>
-<div class="container">
+ </header>
+
+
+<div class="container">	
 	<div class="teste">	
-	<h2>Lista Cadastro</h2>
-<table class="table table-hover table-striped table-dark">
+	<div id="carouselExampleSlidesOnly" class="carousel slide" data-ride="carousel">
+  <div class="carousel-inner">
+    <div class="carousel-item active">
+        <img src="icon/slide1.png" class="d-block w-100" alt="...">
+    </div>
+    <div class="carousel-item">
+      <img src="icon/slide2.png" class="d-block w-100" alt="...">
+    </div>
+    <div class="carousel-item">
+      					<img src="icon/slide3.png" class="d-block w-100" alt="...">
+    			</div>
+  			</div>
+		</div>
+
+
+      <div class="">
+		<h2 class="pi">Cadastrar Funcionario</h2>
+		<form  method="post" action="cadastro.php">
+	<p class="font-weight-bold font-italic">Nome<input class="form-control" type="text" name="nome" placeholder="José s..."></p>
 	
-<tr >
-	<td>Id</td>
-	<td>Nome</td>
-	<td>Sobrenome</td>
-	<td>Cpf</td>
-	<td>Data Cadastro</td>
-	<td>Cargo</td>
+	<p class="font-weight-bold font-italic" >Sobrenome<input class="form-control" type="text" name="sobrenome" placeholder="Cunha..."></p>
+	
+	<p class="font-weight-bold font-italic">Cpf<input class="form-control" type="text" name="cpf" placeholder="002 3443 384 10..."></p>
+	
+	<p class="font-weight-bold font-italic">Cargo<input class="form-control" type="text" name="cargo" placeholder="Analista ..."></p>
+	<input type="submit" name="cadastrar" value="Cadastrar"class="btn btn-primary btn-sm">
+	
 
-	<td>Opção</td>
-
-
-</tr>
-<?php
-while ($linha = $comando->fetch(PDO::FETCH_ASSOC)){
- 						//echo$nome=$linha["nome"];
- 						//echo$linha["sobrenome"];
- 						//echo$linha["cpf"];
- 						//echo$linha["cargo"];
- 						//echo$linha["data"];
-
-									$nome=$linha['nome'];
-									$sobrenome=$linha['sobrenome'];
-									$cpf=$linha['cpf'];
-									$data=$linha['data'];
-									$cargo=$linha['cargo'];
-									$id=$linha['id'];
-		echo	"
-
-	<tr>
-		<td>     $id     </td>
-		<td>  $nome </td>
-		<td> $sobrenome </td>
-		<td>  $cpf      </td>
-		<td>  $data     </td>
-		<td>  $cargo    </td>
 		
-	<td><a href='deleta.php?id=$id'>Deletar</a>
-	<a href='edita.php?id=$id'>Editar</a></td>
-	";
-}
-	?>
-	
-	
-</table>
+		</div>
+	</div>
 </div>
-</div>
+
+
+	
+
+
+
+
 
 
 
@@ -177,8 +147,12 @@ while ($linha = $comando->fetch(PDO::FETCH_ASSOC)){
 	</div>
 </footer>
 
+
 <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+	
 </body>
 </html>
+
+	

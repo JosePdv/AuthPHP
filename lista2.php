@@ -1,7 +1,7 @@
+
 <?php 
 
-
-	require 'Conexao.php';
+require 'Conexao.php';
 	require 'usuario.php';
 	$u = new Usuario();
 
@@ -43,7 +43,7 @@ $conexao = new PDO('mysql:host=localhost;dbname=atividade',
 ?>
 <html>
 <head>
-<title> Prefeitura Rio Branco</title>
+<title> Prefeitura Rio Branco </title>
 <meta charset="UTF-8">
 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
 <link rel="icon" href="icon/icon4.png" type="image/icon type">
@@ -51,11 +51,12 @@ $conexao = new PDO('mysql:host=localhost;dbname=atividade',
 <link rel="stylesheet"  href="css/lista.css">
 </head>  
 
-<body >
 
-	<header class="cabecalho"> 
-		<div class="container">
-	<a  href="formulario.php"> <img src="icon/id.png"></a>
+<body>
+
+<header class="cabecalho"> 
+	<div class="container">
+		<a  href="formulario.php"> <img src="icon/id.png"></a>
 	<a  href="logout.php"><button  class="btn btn-outline-dark ">sair</button></a>
 	<nav class="grid-16 menu">
         <ul>
@@ -68,12 +69,13 @@ $conexao = new PDO('mysql:host=localhost;dbname=atividade',
 
       </nav>
 	</div>
- 	</header>
+ </header>
+
+
 <div class="container">
 	<div class="teste">	
-	<h2>Lista Cadastro</h2>
+		<h2>Lista Cadastro</h2>
 <table class="table table-hover table-striped table-dark">
-	
 <tr >
 	<td>Id</td>
 	<td>Nome</td>
@@ -81,10 +83,6 @@ $conexao = new PDO('mysql:host=localhost;dbname=atividade',
 	<td>Cpf</td>
 	<td>Data Cadastro</td>
 	<td>Cargo</td>
-
-	<td>Opção</td>
-
-
 </tr>
 <?php
 while ($linha = $comando->fetch(PDO::FETCH_ASSOC)){
@@ -110,18 +108,14 @@ while ($linha = $comando->fetch(PDO::FETCH_ASSOC)){
 		<td>  $data     </td>
 		<td>  $cargo    </td>
 		
-	<td><a href='deleta.php?id=$id'>Deletar</a>
-	<a href='edita.php?id=$id'>Editar</a></td>
-	";
+	
+	</tr>";
 }
 	?>
-	
 	
 </table>
 </div>
 </div>
-
-
 
 <footer >
 	<div class="rodape">
@@ -176,6 +170,16 @@ while ($linha = $comando->fetch(PDO::FETCH_ASSOC)){
 	<p class="font-weight-bold font-italic">  --- Copright 2020 ---</p>
 	</div>
 </footer>
+
+
+
+
+
+
+
+
+
+
 
 <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>

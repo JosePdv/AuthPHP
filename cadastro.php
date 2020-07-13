@@ -1,6 +1,6 @@
 <?php
  //require"Conexao.php"
-
+if (!isset($_SESSION)) session_start();
 
 $nome = $_POST['nome'];
 $sobrenome= $_POST['sobrenome'];
@@ -22,10 +22,16 @@ $comando->bindParam(':cg', $cargo);
 $comando->bindParam(':d', $data);
 $comando->execute();
 
-if ($linha = $comando->fetch()) {
-	Header('Location: http://localhost/atividade/Index.html?erro=1');
-	exit();
-}
+require 'usuario.php';
+	$u = new Usuario();
+	if(isset($_SESSION['tip']) && ($_SESSION['tip']== 1)){
+		header('location: lista2.php');
+	}else{
+//if ($linha = $comando->fetch()) {
+	//Header('Location: http://localhost/atividade/Index.html?erro=1');
+	//exit();
+
 
 	Header('Location: http://localhost/atividade/lista.php');
+}
 ?>
